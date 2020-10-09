@@ -1,0 +1,10 @@
+use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
+
+$permissionEdit = Permission::create(['name' => 'edit']);
+$permissionCreate = Permission::create(['name' => 'post']);
+$permissionUpdate = Permission::create(['name' => 'update']);
+$permissionRemove = Permission::create(['name' => 'remove']);
+$role = Role::create(['name' => 'admin']);
+$role->syncPermissions([$permissionEdit, $permissionCreate, $permissionUpdate, $permissionRemove]); 
+Role::create(['name' => 'user']);

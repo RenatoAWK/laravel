@@ -22,16 +22,16 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/products', [App\Http\Controllers\ProductsController::class, 'create']);
+Route::get('/products', [App\Http\Controllers\ProductsController::class, 'create'])->middleware('role:admin');
 
-Route::post('/products', [App\Http\Controllers\ProductsController::class, 'store'])->name('add_new_product');
+Route::post('/products', [App\Http\Controllers\ProductsController::class, 'store'])->name('add_new_product')->middleware('role:admin');
 
-Route::get('/products/{id}', [App\Http\Controllers\ProductsController::class, 'show']);
+Route::get('/products/{id}', [App\Http\Controllers\ProductsController::class, 'show'])->middleware('role:admin');
 
-Route::get('/products/edit/{id}', [App\Http\Controllers\ProductsController::class, 'edit']);
+Route::get('/products/edit/{id}', [App\Http\Controllers\ProductsController::class, 'edit'])->middleware('role:admin');
 
-Route::post('/products/edit/{id}', [App\Http\Controllers\ProductsController::class, 'update'])->name('update_product');
+Route::post('/products/edit/{id}', [App\Http\Controllers\ProductsController::class, 'update'])->name('update_product')->middleware('role:admin');
 
-Route::get('/products/delete/{id}', [App\Http\Controllers\ProductsController::class, 'remove']);
+Route::get('/products/delete/{id}', [App\Http\Controllers\ProductsController::class, 'remove'])->middleware('role:admin');
 
-Route::post('/products/delete/{id}', [App\Http\Controllers\ProductsController::class, 'destroy'])->name('destroy_product');
+Route::post('/products/delete/{id}', [App\Http\Controllers\ProductsController::class, 'destroy'])->name('destroy_product')->middleware('role:admin');
