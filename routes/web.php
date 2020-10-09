@@ -22,6 +22,8 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/products/new', [App\Http\Controllers\ProductsController::class, 'create']);
+Route::get('/products', [App\Http\Controllers\ProductsController::class, 'create']);
 
-Route::post('/products/new', [App\Http\Controllers\ProductsController::class, 'store'])->name('add_new_product');
+Route::post('/products', [App\Http\Controllers\ProductsController::class, 'store'])->name('add_new_product');
+
+Route::get('/products/{id}', [App\Http\Controllers\ProductsController::class, 'show']);

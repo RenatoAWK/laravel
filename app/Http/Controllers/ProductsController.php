@@ -24,4 +24,9 @@ class ProductsController extends Controller
 
         return "Produto criado";
     }
+
+    public function show($id)
+    {
+        return view('products.show', ['product' => Product::findOrFail($id)]);
+    }
 }
