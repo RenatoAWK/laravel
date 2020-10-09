@@ -22,6 +22,8 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::get('/products/all', [App\Http\Controllers\ProductsController::class, 'showAll'])->middleware('role:admin');
+
 Route::get('/products', [App\Http\Controllers\ProductsController::class, 'create'])->middleware('role:admin');
 
 Route::post('/products', [App\Http\Controllers\ProductsController::class, 'store'])->name('add_new_product')->middleware('role:admin');

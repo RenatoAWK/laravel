@@ -57,8 +57,8 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="products">Create product</a>
-                                    <a class="dropdown-item" href="#">List of products</a>
+                                    <a class="dropdown-item" href="/products">Create product</a>
+                                    <a class="dropdown-item" href="/products/all">List of products</a>
                                 </div>
                             </li>
 

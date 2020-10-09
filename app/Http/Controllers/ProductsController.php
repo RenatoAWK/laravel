@@ -62,4 +62,9 @@ class ProductsController extends Controller
 
         return "Product removed";
     }
+
+    public function showAll()
+    {
+        return view('products.list', ['products' => Product::all()]);
+    }
 }
