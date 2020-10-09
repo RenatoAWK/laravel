@@ -27,3 +27,7 @@ Route::get('/products', [App\Http\Controllers\ProductsController::class, 'create
 Route::post('/products', [App\Http\Controllers\ProductsController::class, 'store'])->name('add_new_product');
 
 Route::get('/products/{id}', [App\Http\Controllers\ProductsController::class, 'show']);
+
+Route::get('/products/edit/{id}', [App\Http\Controllers\ProductsController::class, 'edit']);
+
+Route::post('/products/edit/{id}', [App\Http\Controllers\ProductsController::class, 'update'])->name('update_product');
