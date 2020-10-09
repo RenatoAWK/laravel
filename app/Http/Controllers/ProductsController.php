@@ -49,4 +49,17 @@ class ProductsController extends Controller
 
         return "Product updated";
     }
+
+    public function remove($id)
+    {
+        return view('products.delete', ['product' => Product::findOrFail($id)]);
+    }
+
+    public function destroy($id)
+    {
+        $product = Product::findOrFail($id);
+        $product->delete();
+
+        return "Product removed";
+    }
 }

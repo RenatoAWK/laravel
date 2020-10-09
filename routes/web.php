@@ -31,3 +31,7 @@ Route::get('/products/{id}', [App\Http\Controllers\ProductsController::class, 's
 Route::get('/products/edit/{id}', [App\Http\Controllers\ProductsController::class, 'edit']);
 
 Route::post('/products/edit/{id}', [App\Http\Controllers\ProductsController::class, 'update'])->name('update_product');
+
+Route::get('/products/delete/{id}', [App\Http\Controllers\ProductsController::class, 'remove']);
+
+Route::post('/products/delete/{id}', [App\Http\Controllers\ProductsController::class, 'destroy'])->name('destroy_product');
