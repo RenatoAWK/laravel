@@ -9,6 +9,17 @@ class Item extends Model
 {
     use HasFactory;
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'price',
+        'product_id',
+        'order_id'
+    ];
+
     public function product()
     {
         return $this->hasOne(Product::class);

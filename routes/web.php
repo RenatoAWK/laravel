@@ -37,3 +37,7 @@ Route::post('/products/edit/{id}', [App\Http\Controllers\ProductsController::cla
 Route::get('/products/delete/{id}', [App\Http\Controllers\ProductsController::class, 'remove'])->middleware('role:admin');
 
 Route::post('/products/delete/{id}', [App\Http\Controllers\ProductsController::class, 'destroy'])->name('destroy_product')->middleware('role:admin');
+
+Route::post('/purshase', [App\Http\Controllers\OrderController::class, 'store']);
+
+Route::get('/pfd', [App\Http\Controllers\OrderController::class, 'show']);
