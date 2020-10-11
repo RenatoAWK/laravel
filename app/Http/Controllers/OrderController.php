@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Item;
 use App\Models\Order;
 use App\Models\Product;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -31,6 +32,6 @@ class OrderController extends Controller
 
     public function show()
     {
-        return view("pdf");
+        return view('pdf', ['orders' => Order::where('user_id', '=', auth()->user()->id)->get()]);
     }
 }

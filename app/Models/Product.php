@@ -21,4 +21,9 @@ class Product extends Model
         'quantity',
         'activated',
     ];
+
+    public function items()
+    {
+        return $this->belongsToMany(Item::class);
+    }
 }

@@ -8,3 +8,4 @@ $permissionRemove = Permission::create(['name' => 'remove']);
 $role = Role::create(['name' => 'admin']);
 $role->syncPermissions([$permissionEdit, $permissionCreate, $permissionUpdate, $permissionRemove]); 
 Role::create(['name' => 'user']);
+

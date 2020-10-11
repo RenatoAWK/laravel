@@ -11,7 +11,7 @@
         </div>
         <div class="col-md-8">
             @foreach ($products as $product)
-            <div class="card p-2" id="product{{$product->id}}">
+            <div class="card p-2 mb-5" id="product{{$product->id}}">
                 <div class="card-header">
                     <a href="/products/{{ $product->id }}">{{ $product->name }}</a>
                     <h4>Price: {{$product->price}}</h4>
@@ -84,6 +84,12 @@
                     _token: "{{ csrf_token() }}"
                 })
             });
+            const status = await rawResponse.ok;
+            if (status) {
+                window.location.href = "/pdf";
+            } else {
+                alert("Ocorreu um erro");
+            }
         })();
     }
 </script>

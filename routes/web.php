@@ -40,4 +40,4 @@ Route::post('/products/delete/{id}', [App\Http\Controllers\ProductsController::c
 
 Route::post('/purshase', [App\Http\Controllers\OrderController::class, 'store']);
 
-Route::get('/pfd', [App\Http\Controllers\OrderController::class, 'show']);
+Route::get('/pdf', [App\Http\Controllers\OrderController::class, 'show']);
