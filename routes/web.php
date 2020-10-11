@@ -20,7 +20,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('role:admin|user');
 
 Route::get('/products/all', [App\Http\Controllers\ProductsController::class, 'showAll'])->middleware('role:admin');
 
@@ -38,6 +38,6 @@ Route::get('/products/delete/{id}', [App\Http\Controllers\ProductsController::cl
 
 Route::post('/products/delete/{id}', [App\Http\Controllers\ProductsController::class, 'destroy'])->name('destroy_product')->middleware('role:admin');
 
-Route::post('/purshase', [App\Http\Controllers\OrderController::class, 'store']);
+Route::post('/purshase', [App\Http\Controllers\OrderController::class, 'store'])->middleware('role:admin|user');
 
-Route::get('/pdf', [App\Http\Controllers\OrderController::class, 'show']);
+Route::get('/pdf', [App\Http\Controllers\OrderController::class, 'show'])->middleware('role:admin|user');

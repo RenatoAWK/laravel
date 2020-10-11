@@ -49,6 +49,12 @@
                                 </li>
                             @endif
                         @else
+                            <li class="nav-item">
+                                <a class="nav-link" href="/home">Store</a>
+                             </li>
+                             <li class="nav-item">
+                                <a class="nav-link" href="/pdf">Orders</a>
+                             </li>
                             @role('admin')
                             
                             <li class="nav-item dropdown">
